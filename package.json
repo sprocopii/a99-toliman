@@ -1,0 +1,23 @@
+{
+  "name": "a99-toliman",
+  "version": "1.0.0",
+  "description": "Daily tasks for physical and mental wellbeing",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "minimist": "^1.2.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WidAlsa0/a99-toliman.git"
+  },
+  "author": "Team Toliman",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/WidAlsa0/a99-toliman/issues"
+  },
+  "homepage": "https://github.com/WidAlsa0/a99-toliman#readme"
+}
