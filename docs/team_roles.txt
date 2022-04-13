@@ -1,0 +1,14 @@
+Review Manager: Wid Alsadoon
+Plan Manager: Wid Alsadoon & Angus Ingram
+Documentation Manager: Kai White
+Release Manager: Stephan Procopii
+Project Manager: Madison McFadden
+
+Backend:
+Wid Alsadoon
+Kai White
+
+Frontend & Design:
+Stephan Procopii
+Madison McFadden
+Angus Ingram
