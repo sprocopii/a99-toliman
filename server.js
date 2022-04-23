@@ -6,6 +6,7 @@ const app = express()
 var port =  args.port || process.env.PORT || 5000
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
+
 var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a friend or family member on the phone", "10 minutes of journaling", "1 hour without your phone", "Watch a 20 minute show"]
 var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the health of your joints and muscles!",
                             "30 minutes of aerobics is the heart's best treatment. It increases your stamina and ensures healthy arteries",
@@ -13,6 +14,11 @@ var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the 
                             "Going on a quick jog is the best way to keep a strong immune system and reduce stress hormones",
                             "10 minutes of stretching is enough to keep muscles, joints, and bones in their proper alignments",
                             "15 minutes of biking is perfect for mobility, balance, flexibility, and strength"]
+
+var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a loved one on the phone", "10 minutes of journaling", "1 hour without your phone", "Watch a 20 minute show"]
+var descriptions = [""]
+var mental_descriptions = ["Spending time outside can help to reduce anxiety and depression. Take a break today and spend some time outside", "Reading can help improve your quality of sleep and sharpen you mind.", "Talking to loved ones daily can help increase your sense of belonging and boost your happiness.", "Journaling helps you to express your thoughts and emotions while giving you a moment of relfection.", "Give your brain a rest. Unplugging for an hour will help reduce stress and anxeity.", "Take a moment to relax and watch an episode of your favorite TV show!"]
+
 
 function randomInRange(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min)
