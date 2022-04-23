@@ -6,8 +6,6 @@ const app = express()
 var port =  args.port || process.env.PORT || 5000
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
-
-var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a friend or family member on the phone", "10 minutes of journaling", "1 hour without your phone", "Watch a 20 minute show"]
 var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the health of your joints and muscles!",
                             "30 minutes of aerobics is the heart's best treatment. It increases your stamina and ensures healthy arteries",
                             "20 minutes of yoga will improve your flexibility, reduce inflammation, and increase your strength",
@@ -146,10 +144,6 @@ app.get('/app/mental/task2', (req, res) => {
 app.get('/app/mental/task3', (req, res) => {
     var tasks = mentalDescription_Randomizer()
     res.status(200).json(tasks.at(2))
-})
-
-app.get('/app/echo/:number', (req, res) => {
-    res.status(200).json({  'message': req.params.number })
 })
 
 app.use(function(req, res) {
