@@ -10,22 +10,23 @@ var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a fr
 var descriptions = [""]
 
 function randomInRange(min, max){
-	return Math.floor(Math.random() * (max - min + 1) + min);}
-
-function randomiz_physical() {
-  var random_index1 = randomInRange(0,5)
-  var task1 = physical_tasks.at(random_index1)
-  random_index2 = randomInRange(0,5)
-  while (random_index1 == random_index2) {
-    random_index2 = randomInRange(0,5)
+	return Math.floor(Math.random() * (max - min + 1) + min)
 }
-var task2 = physical_tasks.at(random_index2)
-  random_index3 = randomInRange(0,5)
-  while (random_index2 == random_index3) {
-      random_index3 = randomInRange(0,5)
-  }
-  var task3 = physical_tasks.at(random_index3)
-  return [task1, task2, task3]
+
+function date_Randomizer() {
+    var time = new Date()
+    const date = time.getDate()
+    if (date<15) {
+        var task1 = physical_tasks.at(0)
+        var task2 = physical_tasks.at(2)
+        var task3 = physical_tasks.at(4)
+        return [task1, task2, task3]
+    } else {
+        var task1 = physical_tasks.at(1)
+        var task2 = physical_tasks.at(3)
+        var task3 = physical_tasks.at(4)
+        return [task1, task2, task3]
+    }
 }
 
 function randomiz_mental() {
@@ -44,6 +45,7 @@ function randomiz_mental() {
     return [task1, task2, task3]
   }
 
+
 const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
 })
@@ -56,12 +58,17 @@ app.get('/app',(req, res) => {
 
 app.get('/app/physical', (req, res) => {
   var msg = 'Physical wellbeing is vital to the longevity and comfort of the body. These are you physical tasks for the day: '
- // res.status(200).json(msg)
   
-  var tasks = randomiz_physical()
+  var tasks = date_Randomizer()
   res.status(200).json(tasks)
-  //res.status(200).end(tasks)
 })
+
+
+app.get('/app/physical/task1', (req, res) => {
+   
+    
+    res.status(200).json(tasks)
+  })
 
 app.get('/app/mental', (req, res) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
@@ -74,7 +81,6 @@ app.get('/app/mental', (req, res) => {
 app.get('/app/echo/:number', (req, res) => {
     res.status(200).json({  'message': req.params.number })
 })
-
 
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
