@@ -6,6 +6,7 @@ const app = express()
 var port =  args.port || process.env.PORT || 5000
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
+var mental_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
 var descriptions = [""]
 
 function randomInRange(min, max){
@@ -20,6 +21,16 @@ function randomiz_physical() {
   var task3 = physical_tasks.at(random_index)
   return [task1, task2, task3]
 }
+
+function randomiz_mental() {
+    var random_index = randomInRange(1,6)
+    var task1 = mental_tasks.at(random_index)
+    random_index = randomInRange(1,6)
+    var task2 = mental_tasks.at(random_index)
+    random_index = randomInRange(1,6)
+    var task3 = mental_tasks.at(random_index)
+    return [task1, task2, task3]
+  }
 
 const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
@@ -39,6 +50,14 @@ app.get('/app/physical', (req, res) => {
   res.status(200).json(tasks)
   //res.status(200).end(tasks)
 })
+
+app.get('/app/mental', (req, res) => {
+    var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
+   // res.status(200).json(msg)
+    
+    var tasks = randomiz_mental()
+    res.status(200).json(tasks)
+  })
 
 app.get('/app/echo/:number', (req, res) => {
     res.status(200).json({  'message': req.params.number })
