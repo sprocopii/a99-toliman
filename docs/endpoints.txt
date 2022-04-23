@@ -1,0 +1,28 @@
+/app
+The root endpoint: Prompts user to choose task
+
+/app/physical
+Gives the list of physical tasks for the day
+
+/app/physical/task1
+Gives a description of the first physical task of the day
+
+/app/physical/task2
+Gives a description of the second physical task of the day
+
+/app/physical/task3
+Gives a description of the third physical task of the day
+
+/app/mental
+Gives the list of mental tasks for the day
+
+/app/mental/task1
+Gives the list of first mental task of the day
+
+/app/mental/task2
+Gives the list of second mental task of the day
+
+/app/mental/task3
+Gives the list of third mental task of the day
+
+

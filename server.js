@@ -25,7 +25,7 @@ var mental_descriptions = ["Spending time outside can help to reduce anxiety and
 function randomInRange(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
+//testing
 function date_Randomizer() {
     var time = new Date()
     const date = time.getDate()
@@ -99,7 +99,6 @@ const server = app.listen(port, () => {
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
-    //res.end(res.statusCode +''+ res.statusMessage)
 })
 
 app.get('/app/physical', (req, res) => {
@@ -130,6 +129,7 @@ app.get('/app/mental', (req, res) => {
     var tasks = randomiz_mental()
     res.status(200).json(tasks)
   })
+
 
 app.get('/app/mental/task1', (req, res) => {
     var tasks = mentalDescription_Randomizer()
