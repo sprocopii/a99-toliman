@@ -75,7 +75,6 @@ const server = app.listen(port, () => {
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
-    //res.end(res.statusCode +''+ res.statusMessage)
 })
 
 app.get('/app/physical', (req, res) => {
@@ -107,10 +106,6 @@ app.get('/app/mental', (req, res) => {
     var tasks = randomiz_mental()
     res.status(200).json(tasks)
   })
-
-app.get('/app/echo/:number', (req, res) => {
-    res.status(200).json({  'message': req.params.number })
-})
 
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
