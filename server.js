@@ -16,8 +16,12 @@ var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the 
                             "15 minutes of biking is perfect for mobility, balance, flexibility, and strength"]
 
 var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a loved one on the phone", "10 minutes of journaling", "1 hour without your phone", "Watch a 20 minute show"]
-var descriptions = [""]
-var mental_descriptions = ["Spending time outside can help to reduce anxiety and depression. Take a break today and spend some time outside", "Reading can help improve your quality of sleep and sharpen you mind.", "Talking to loved ones daily can help increase your sense of belonging and boost your happiness.", "Journaling helps you to express your thoughts and emotions while giving you a moment of relfection.", "Give your brain a rest. Unplugging for an hour will help reduce stress and anxeity.", "Take a moment to relax and watch an episode of your favorite TV show!"]
+var mental_descriptions = ["Spending time outside can help to reduce anxiety and depression. Take a break today and spend some time outside", 
+                            "Reading can help improve your quality of sleep and sharpen you mind.", 
+                            "Talking to loved ones daily can help increase your sense of belonging and boost your happiness.", 
+                            "Journaling helps you to express your thoughts and emotions while giving you a moment of relfection.", 
+                            "Give your brain a rest. Unplugging for an hour will help reduce stress and anxeity.", 
+                            "Take a moment to relax and watch an episode of your favorite TV show!"]
 
 
 function randomInRange(min, max){
@@ -73,6 +77,22 @@ function randomiz_mental() {
     }
   }
 
+function mentalDescription_Randomizer() {
+    var time = new Date()
+    const date = time.getDate()
+    if (date%2 == 0) {
+        var task1 = mental_descriptions.at(0)
+        var task2 = mental_descriptions.at(2)
+        var task3 = mental_descriptions.at(4)
+        return [task1, task2, task3]
+    } else {
+        var task1 = mental_descriptions.at(1)
+        var task2 = mental_descriptions.at(3)
+        var task3 = mental_descriptions.at(4)
+        return [task1, task2, task3]
+    }
+
+}
 
 const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
@@ -113,6 +133,21 @@ app.get('/app/mental', (req, res) => {
     var tasks = randomiz_mental()
     res.status(200).json(tasks)
   })
+
+app.get('/app/mental/task1', (req, res) => {
+    var tasks = mentalDescription_Randomizer()
+    res.status(200).json(tasks.at(0))
+  })
+
+app.get('/app/mental/task2', (req, res) => {
+    var tasks = mentalDescription_Randomizer()
+    res.status(200).json(tasks.at(1))
+})
+
+app.get('/app/mental/task3', (req, res) => {
+    var tasks = mentalDescription_Randomizer()
+    res.status(200).json(tasks.at(2))
+})
 
 app.get('/app/echo/:number', (req, res) => {
     res.status(200).json({  'message': req.params.number })
