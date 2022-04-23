@@ -9,23 +9,25 @@ var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of 
 var descriptions = [""]
 
 function randomInRange(min, max){
-	return Math.floor(Math.random() * (max - min + 1) + min);}
+	return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
-function randomiz_physical() {
-  var random_index1 = randomInRange(0,5)
-  var task1 = physical_tasks.at(random_index1)
-  random_index2 = randomInRange(0,5)
-  while (random_index1 == random_index2) {
-    random_index2 = randomInRange(0,5)
+function date_Randomizer() {
+    var time = new Date()
+    const date = time.getDate()
+    if (date<15) {
+        var task1 = physical_tasks.at(0)
+        var task2 = physical_tasks.at(2)
+        var task3 = physical_tasks.at(4)
+        return [task1, task2, task3]
+    } else {
+        var task1 = physical_tasks.at(1)
+        var task2 = physical_tasks.at(3)
+        var task3 = physical_tasks.at(4)
+        return [task1, task2, task3]
+    }
 }
-var task2 = physical_tasks.at(random_index2)
-  random_index3 = randomInRange(0,5)
-  while (random_index2 == random_index3) {
-      random_index3 = randomInRange(0,5)
-  }
-  var task3 = physical_tasks.at(random_index3)
-  return [task1, task2, task3]
-}
+
 
 const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
@@ -39,13 +41,16 @@ app.get('/app',(req, res) => {
 
 app.get('/app/physical', (req, res) => {
   var msg = 'Physical wellbeing is vital to the longevity and comfort of the body. These are you physical tasks for the day: '
- // res.status(200).json(msg)
   
-  var tasks = randomiz_physical()
+  var tasks = date_Randomizer()
   res.status(200).json(tasks)
-  //res.status(200).end(tasks)
 })
 
+app.get('/app/physical/task1', (req, res) => {
+    
+    
+    res.status(200).json(tasks)
+  })
 
 
 app.use(function(req, res) {
