@@ -13,12 +13,18 @@ function randomInRange(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min);}
 
 function randomiz_physical() {
-  var random_index = randomInRange(1,6)
-  var task1 = physical_tasks.at(random_index)
-  random_index = randomInRange(1,6)
-  var task2 = physical_tasks.at(random_index)
-  random_index = randomInRange(1,6)
-  var task3 = physical_tasks.at(random_index)
+  var random_index1 = randomInRange(0,5)
+  var task1 = physical_tasks.at(random_index1)
+  random_index2 = randomInRange(0,5)
+  while (random_index1 == random_index2) {
+    random_index2 = randomInRange(0,5)
+}
+var task2 = physical_tasks.at(random_index2)
+  random_index3 = randomInRange(0,5)
+  while (random_index2 == random_index3) {
+      random_index3 = randomInRange(0,5)
+  }
+  var task3 = physical_tasks.at(random_index3)
   return [task1, task2, task3]
 }
 
@@ -51,6 +57,7 @@ app.get('/app/physical', (req, res) => {
   //res.status(200).end(tasks)
 })
 
+<<<<<<< HEAD
 app.get('/app/mental', (req, res) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
    // res.status(200).json(msg)
@@ -62,29 +69,9 @@ app.get('/app/mental', (req, res) => {
 app.get('/app/echo/:number', (req, res) => {
     res.status(200).json({  'message': req.params.number })
 })
+=======
+>>>>>>> b7b377fc6f9c9662c8af371307019e54dfa9f973
 
-app.get('/app/flip', (req, res) => {
-    //var flip = coinFlip()
-    //res.status(200).json({'flip': flip})
-})
-
-app.get('/app/flips/:number', (req, res) => {
-    //const flips = coinFlips(req.params.number)
-    //var flips_summary = countFlips(flips)
-    //res.status(200).json({'raw': flips, 'summary': flips_summary})
-})
-
-app.get('/app/flip/call/heads', (req, res) => {
-    //var input = "heads"
-    //const flips = flipACoin(input)
-    //res.status(200).json(flips)
-})
-
-app.get('/app/flip/call/tails', (req, res) => {
-    //var input = "tails"
-    //const flips = flipACoin(input)
-    //res.status(200).json(flips)
-})
 
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
