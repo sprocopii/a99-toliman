@@ -31,19 +31,19 @@ function date_Randomizer() {
 }
 
 function randomiz_mental() {
-    var random_index1 = randomInRange(0,5)
-    var task1 = mental_tasks.at(random_index1)
-    random_index2 = randomInRange(0,5)
-    while (random_index1 == random_index2) {
-        random_index2 = randomInRange(0,5)
+    var time = new Date()
+    const date = time.getDate()
+    if (date%2 == 0) {
+        var task1 = mental_tasks.at(0)
+        var task2 = mental_tasks.at(2)
+        var task3 = mental_tasks.at(4)
+        return [task1, task2, task3]
+    } else {
+        var task1 = mental_tasks.at(1)
+        var task2 = mental_tasks.at(3)
+        var task3 = mental_tasks.at(4)
+        return [task1, task2, task3]
     }
-    var task2 = mental_tasks.at(random_index2)
-    random_index3 = randomInRange(0,5)
-    while (random_index2 == random_index3) {
-        random_index3 = randomInRange(0,5)
-    }
-    var task3 = mental_tasks.at(random_index3)
-    return [task1, task2, task3]
   }
 
 
