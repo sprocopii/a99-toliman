@@ -7,7 +7,12 @@ var port =  args.port || process.env.PORT || 5000
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
 var mental_tasks = ["Spend time outside", "30 minutes of reading", "Talk to a friend or family member on the phone", "10 minutes of journaling", "1 hour without your phone", "Watch a 20 minute show"]
-var descriptions = [""]
+var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the health of your joints and muscles!",
+                            "30 minutes of aerobics is the heart's best treatment. It increases your stamina and ensures healthy arteries",
+                            "20 minutes of yoga will improve your flexibility, reduce inflammation, and increase your strength",
+                            "Going on a quick jog is the best way to keep a strong immune system and reduce stress hormones",
+                            "10 minutes of stretching is enough to keep muscles, joints, and bones in their proper alignments",
+                            "15 minutes of biking is perfect for mobility, balance, flexibility, and strength"]
 
 function randomInRange(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min)
@@ -27,6 +32,23 @@ function date_Randomizer() {
         var task3 = physical_tasks.at(4)
         return [task1, task2, task3]
     }
+}
+
+function physicalDescription_Randomizer() {
+    var time = new Date()
+    const date = time.getDate()
+    if (date<15) {
+        var task1 = physical_descriptions.at(0)
+        var task2 = physical_descriptions.at(2)
+        var task3 = physical_descriptions.at(4)
+        return [task1, task2, task3]
+    } else {
+        var task1 = physical_descriptions.at(1)
+        var task2 = physical_descriptions.at(3)
+        var task3 = physical_descriptions.at(4)
+        return [task1, task2, task3]
+    }
+
 }
 
 function randomiz_mental() {
@@ -63,12 +85,20 @@ app.get('/app/physical', (req, res) => {
   res.status(200).json(tasks)
 })
 
-
 app.get('/app/physical/task1', (req, res) => {
-   
-    
-    res.status(200).json(tasks)
+    var tasks = physicalDescription_Randomizer()
+    res.status(200).json(tasks.at(0))
   })
+
+app.get('/app/physical/task2', (req, res) => {
+    var tasks = physicalDescription_Randomizer()
+    res.status(200).json(tasks.at(1))
+})
+
+app.get('/app/physical/task3', (req, res) => {
+    var tasks = physicalDescription_Randomizer()
+    res.status(200).json(tasks.at(2))
+})
 
 app.get('/app/mental', (req, res) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
