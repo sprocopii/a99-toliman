@@ -128,7 +128,6 @@ app.get('/app/physical/task3', (req, res) => {
 
 app.get('/app/mental', (req, res) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
-   // res.status(200).json(msg)
     
     var tasks = randomiz_mental()
     res.status(200).json(tasks)
