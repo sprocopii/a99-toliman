@@ -1,1 +1,51 @@
-// HTML home page  to lead you to your physical and mental tasks for the day
+<!--HTML home page  to lead you to your physical and mental tasks for the day-->
+<!DOCTYPE html>
+<html lang=""en>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Daily Tasks For your Health</title>
+    </head>
+    <body>
+        <nav>
+            <button id="homenav" onclick="homeNav()" class="active">Home</button>
+            <button id="loginnav" onclick="loginNav()">Log in</button>
+            <button id="mentalnav" onclick="mentalNav()">Mental Health</button>
+            <button id="physicalnav" onclick="physicalNav()">Physical Health</button>
+        </nav>
+
+        <div class="container">
+            <!-- home page -->
+            <div id="home" class="active">
+                <h1>Welcome to Daily Health Tasks!</h1>
+                <p>You can choose to get tasks to improve your mental or physical health.</p>
+                <p>Click the button for what kind of tasks you'd like!</p>
+            </div>
+<!-- may not need these, link to other html files 
+comment: log-in 
+<div id="login" class="inactive">
+    <h1>Log in or Sign up Here!</h1>
+     comment: html for login page 
+</div>
+comment: mental health 
+<div id="mentalhealth" class="inactive">
+    <h1>Click the button for your mental health tasks for today!</h1>
+    comment: html for mental health page 
+</div>
+comment: physical health 
+<div id="physical health" class="inactive">
+    <h1>Click the button for your physical health tasks for today!</h1>
+    <button id="physicaltask">Tasks for today!</button>
+    comment: daily tasks and description 
+    <h2>Your tasks:</h2>
+    <p><span id="physicalres"></span></p>
+</div>
+-->
+            
+        </div>
+
+        <!-- link to js file -->
+        <script src="main.js"></script>
+    </body>
+</html>
