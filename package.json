@@ -4,6 +4,7 @@
   "description": "Daily tasks for physical and mental wellbeing",
   "main": "index.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.0",
     "minimist": "^1.2.6"
   },
