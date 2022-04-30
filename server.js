@@ -3,6 +3,14 @@ const args = require("minimist")(process.argv.slice(2))
 args["port"]
 const app = express()
 
+// Serve static HTML files
+app.use(express.static('./public'));
+
+// Add cors dependency
+const cors = require('cors')
+// Set up cors middleware on all endpoints
+app.use(cors())
+
 var port =  args.port || process.env.PORT || 5000
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
@@ -105,7 +113,7 @@ app.get('/app/physical', (req, res) => {
   var msg = 'Physical wellbeing is vital to the longevity and comfort of the body. These are you physical tasks for the day: '
   
   var tasks = date_Randomizer()
-  res.status(200).json(tasks)
+  res.status(200).json({tasks})
 })
 
 app.get('/app/physical/task1', (req, res) => {
