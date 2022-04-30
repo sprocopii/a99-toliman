@@ -2,11 +2,13 @@ const express = require('express')
 const args = require("minimist")(process.argv.slice(2))
 args["port"]
 const app = express()
+const path = require('path')
 
 // Serve static HTML files
 app.use(express.static('./public'));
 
 // Allow json body messages
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // Add cors dependency
@@ -107,6 +109,25 @@ const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
 })
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/login.html')
+})
+
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + '/public/signup.html')
+})
+
+app.get('/mentaltasks', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html')
+})
+
+app.get('/physicaltasks', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html')
+})
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
