@@ -1,1 +1,37 @@
-// HTML page to display the physical tasks
+<!-- HTML page to display the physical tasks -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Daily Physical Health Tasks</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav>
+            <a href="/index.html"><button id="homenav">Home</button></a>
+            <a href="/login.html"><button id="loginnav">Log In</button></a>
+            <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
+            <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
+        </nav>
+
+        <!-- physical health page -->
+        
+            <h1>Click the button for your physical health tasks for today!</h1>
+            <button id="physicaltask">Tasks for today!</button>
+            <!-- daily tasks and description  -->
+            <h2>Your tasks:</h2>
+            <p><span id="physicalres"></span></p>
+            <!--get descriptions-->
+            <h3>Click one of the buttons below to get a description of one of your tasks!</h3>
+            <button id="ptask1">Task 1</button>
+            <button id="ptask2">Task 2</button>
+            <button id="ptask3">Task 3</button>
+            <p>Task 1 description:<span id="pdes1"></span></p>
+            <p>Task 2 description:<span id="pdes2"></span></p>
+            <p>Task 3 description:<span id="pdes3"></span></p>
+        <!-- link to js file -->
+        <script src="main.js"></script>
+    </body>
+</html>

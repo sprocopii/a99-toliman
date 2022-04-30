@@ -2,31 +2,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login Page</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="/css/signup.css">
 	</head>
 	<body>
-		<div class="login">
-            <form action="">
-                <div class="login__field">
-                    <label for="username" class="login__label">Username</label>
-                    <input type="text" name="username" class="login__input" />
-                </div>
-                <div class="login__field">
-                    <label for="password" class="login__label">Password</label>
-                    <input type="password" name="password" class="login__input" />
-                </div>
-                <div class="login__actions">
-                    <div class="login__submit">
-                        <button class="button" type="submit">Login</button>
-                    </div>
-                    <label class="login__rememberMe" for="remember_me">
-                        <input type="hidden" name="remember_me" value="no" />
-                        <input type="checkbox" name="remember_me" value="yes" id="remember_me" />
-                        Remember me
-                    </label>
-                    <a class="login__forgotPasswordLink" href="#">Forgot Your Password?</a>
-                </div>
+        <nav>
+            <a href="/index.html"><button id="homenav">Home</button></a>
+            <a href="/login.html"><button id="loginnav">Log In</button></a>
+            <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
+            <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
+        </nav>
+        <div class = "signup_box">
+            <form>
+                <label for = "username">Username</label>
+                <input type = "username" id = "username" name = "username" placeholder = "Enter username">
+                <label for = "password">Password</label>
+                <input type = "password" id = "password" name = "password" placeholder = "Enter Password">
+                <button type = "register_button" id = "register_button">Register</button>
+                <div class = "go_back">
+                    <a href="/index.html">Home Page</a>
+                </div> 
             </form>
         </div>
-	</body>
+    </body>
 </html>

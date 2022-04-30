@@ -5,9 +5,7 @@ body{
     background-position: center;
 }
 
-.login_box {
-    width: 400px;
-    height: 315px;
+.signup_box {
     background-color: rgba(0,0,0,.5);
     color: white;
     left: 50%;
@@ -21,12 +19,12 @@ body{
     padding: 40px;
 }
 
-.login_box input {
+.signup_box input {
     width: 100%;
     margin-bottom: 30px;
 }
 
-.login_box input[type="username"], input[type="password"] {
+.signup_box input[type="username"], input[type="password"] {
     font-family: Monaco;
     border: none;
     border-bottom: 1px solid white;
@@ -36,7 +34,7 @@ body{
     color: white;
 }
 
-.login_box button {
+.signup_box button {
     font-family: Monaco;
     height: 35px;
     width: 100%;
@@ -47,18 +45,19 @@ body{
     font-size: 15px;
 }
 
-.login_box button:hover {
+.register button:hover {
     cursor: pointer;
     background: #7BAFD4;
     color: white;
+
 }
 
-.signup a{
+.go_back a{
     font-size: 11px;
     line-height: 30px;
     color: lightgray;
 }
 
-.signup a:hover{
+.go_back a:hover{
     color: #7BAFD4;
 }

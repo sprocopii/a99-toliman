@@ -3,18 +3,27 @@
 <html>
 	<head>
         <meta charset = "utf-8">
-        <title> Login Page </title>
-        <link rel="stylesheet" href="/css/login.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="/css/login.css"> 
 	</head>
 	<body>
+        <nav>
+            <a href="/index.html"><button id="homenav">Home</button></a>
+            <a href="/login.html"><button id="loginnav">Log In</button></a>
+            <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
+            <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
+        </nav>
         <div class = "login_box">
             <form>
                 <label for = "username">Username</label>
                 <input type = "username" id = "username" name = "username" placeholder = "Enter Username">
                 <label for = "password">Password</label>
                 <input type = "password" id = "password" name = "password" placeholder = "Enter Password">
-                <button type = "login-button" id = "login-button">Log In</button>
-                <a href="/signup.html">Don't have an account? Sign up here!</a>
+                <button type = "login_button" id = "login_button">Log In</button>
+                <div class = "signup">
+                    <a href="/signup.html">Don't have an account? Sign up here!</a>
+                </div> 
             </form>
         </div>
     </body>
