@@ -1,4 +1,4 @@
-/// js file for html and css content
+// js file for html and css content
 
 // PHYSICAL HEALTH SCRIPTS //
 // get physical task start //
@@ -8,7 +8,8 @@ const physicaltask=document.getElementById("physicaltask")
 physicaltask.addEventListener("click", getPhysTasks)
 // function to wait for response
 
-async function getPhysTasks() {
+async function getPhysTasks(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/physical'
     const url=document.baseURI+endpoint
@@ -21,12 +22,10 @@ async function getPhysTasks() {
                     
                     .then(function(result) {
                         console.log(result);
-                        document.getElementById("physicalres").innerHTML = result;
+                        document.getElementById("physicalres").innerHTML = result.tasks;
             
                     });
 } 
-// get phys task end
-
 // get description 1 //
 const ptask1=document.getElementById("ptask1")
 
@@ -36,7 +35,7 @@ physicaltask.addEventListener("click", getTask1Des)
 
 async function getTask1Des() {
     // endpoint
-    const endpoint='/app/physical/task1'
+    const endpoint="app/physical/task1/"
     const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url)
@@ -47,7 +46,7 @@ async function getTask1Des() {
                     
                     .then(function(result) {
                         console.log(result);
-                        document.getElementById("pdes1").innerHTML = result;
+                        document.getElementById("pdes1").innerHTML = result.tasks.at(0);
             
                     });
 } 
@@ -61,7 +60,7 @@ physicaltask.addEventListener("click", getTask2Des)
 
 async function getTask2Des() {
     // endpoint
-    const endpoint='/app/physical/task2'
+    const endpoint="app/physical/task2/"
     const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url)
@@ -72,7 +71,7 @@ async function getTask2Des() {
                     
                     .then(function(result) {
                         console.log(result);
-                        document.getElementById("pdes2").innerHTML = result;
+                        document.getElementById("pdes2").innerHTML = result.tasks.at(1);
             
                     });
 } 
@@ -87,7 +86,7 @@ physicaltask.addEventListener("click", getTask3Des)
 
 async function getTask3Des() {
     // endpoint
-    const endpoint='/app/physical/task3'
+    const endpoint="app/physical/task3/"
     const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url)
@@ -98,7 +97,7 @@ async function getTask3Des() {
                     
                     .then(function(result) {
                         console.log(result);
-                        document.getElementById("pdes3").innerHTML = result;
+                        document.getElementById("pdes3").innerHTML = result.tasks.at(2);
             
                     });
 } 

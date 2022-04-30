@@ -6,6 +6,9 @@ const app = express()
 // Serve static HTML files
 app.use(express.static('./public'));
 
+// Allow json body messages
+app.use(express.json())
+
 // Add cors dependency
 const cors = require('cors')
 // Set up cors middleware on all endpoints
@@ -61,7 +64,7 @@ function physicalDescription_Randomizer() {
     } else {
         var task1 = physical_descriptions.at(1)
         var task2 = physical_descriptions.at(3)
-        var task3 = physical_descriptions.at(4)
+        var task3 = physical_descriptions.at(4) 
         return [task1, task2, task3]
     }
 
