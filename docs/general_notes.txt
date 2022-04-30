@@ -1,3 +1,11 @@
 Use this file to document sources, planning notes, and other information for the project:
 
 
+login.html:
+    - Ask for username and password to log in
+    - For new account signup, button added at bottom of login page
+    - Link database with login information
+
+signup.html:
+    - When signing up for new account, asks for username and password
+    - 

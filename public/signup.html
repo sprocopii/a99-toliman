@@ -1,11 +1,11 @@
-<!-- HTML page that logs you into your account -->
+<!--HTML page for signing up for a new account-->
 <!DOCTYPE html>
 <html>
 	<head>
         <meta charset = "utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" href="/css/login.css"> 
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="/css/signup.css">
 	</head>
 	<body>
         <nav>
@@ -14,17 +14,18 @@
             <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
             <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
         </nav>
-        <div class = "login_box">
+        <div class = "signup_box">
             <form>
                 <label for = "username">Username</label>
-                <input type = "username" id = "username" name = "username" placeholder = "Enter Username">
+                <input type = "username" id = "username" name = "username" placeholder = "Enter username">
                 <label for = "password">Password</label>
                 <input type = "password" id = "password" name = "password" placeholder = "Enter Password">
-                <button type = "login_button" id = "login_button">Log In</button>
-                <div class = "signup">
-                    <a href="/signup.html">Don't have an account? Sign up here!</a>
+                <button type = "register_button" id = "register_button">Register</button>
+                <div class = "go_back">
+                    <a href="/index.html">Home Page</a>
                 </div> 
             </form>
         </div>
     </body>
 </html>
+

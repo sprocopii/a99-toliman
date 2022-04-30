@@ -1,0 +1,64 @@
+body{
+    font-family: Monaco;
+    background: url(/images/carolina_blue.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.login_box {
+    width: 400px;
+    height: 315px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: none;
+    padding: 40px;
+}
+
+.login_box input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.login_box input[type="username"], input[type="password"] {
+    font-family: Monaco;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: white;
+}
+
+.login_box button {
+    font-family: Monaco;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 10px;
+    background: white;
+    border-style: none;
+    color: black;
+    font-size: 15px;
+}
+
+.login_box button:hover {
+    cursor: pointer;
+    background: #7BAFD4;
+    color: white;
+}
+
+.signup a{
+    font-size: 11px;
+    line-height: 30px;
+    color: lightgray;
+}
+
+.signup a:hover{
+    color: #7BAFD4;
+}
