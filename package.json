@@ -6,8 +6,9 @@
   "dependencies": {
     "better-sqlite3": "^7.5.1",
     "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "minimist": "^1.2.6"
+    "express": "^4.18.0",
+    "minimist": "^1.2.6",
+    "path": "^0.12.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

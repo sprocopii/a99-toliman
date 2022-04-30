@@ -4,9 +4,14 @@ args["port"]
 const app = express()
 var accesslogdb = require('./src/accesslogdb.js')
 var userdb = require('./src/userdb.js')
+const path = require('path')
 
 // Serve static HTML files
 app.use(express.static('./public'));
+
+// Allow json body messages
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // Add cors dependency
 const cors = require('cors')
@@ -91,7 +96,7 @@ function physicalDescription_Randomizer() {
     } else {
         var task1 = physical_descriptions.at(1)
         var task2 = physical_descriptions.at(3)
-        var task3 = physical_descriptions.at(4)
+        var task3 = physical_descriptions.at(4) 
         return [task1, task2, task3]
     }
 
@@ -152,6 +157,25 @@ app.post('/app/signup', (req, res) => {
             });
 })
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/login.html')
+})
+
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + '/public/signup.html')
+})
+
+app.get('/mentaltasks', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html')
+})
+
+app.get('/physicaltasks', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html')
+})
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
