@@ -30,7 +30,7 @@ const logdb = ((req, res, next) => {
 
     }
     const stmt = accesslogdb.prepare('INSERT INTO accesslog (username, password, time) VALUES (?, ?, ?)')
-    const info = stmt.run(logdata.username, logdata.time)
+    const info = stmt.run(logdata.username, logdata.password, logdata.time)
     next()
 });
 
@@ -41,7 +41,7 @@ const newuserdb = ((req, res, next) => {
         time: Date.now(),
 
     }
-    const stmt = userdb.prepare('INSERT INTO userdb (username, password, time) VALUES (?, ?, ?)')
+    const stmt = userdb.prepare('INSERT INTO userlist (username, password, time) VALUES (?, ?, ?)')
     const info = stmt.run(userdata.username, userdata.password, userdata.time)
     next()
 });
@@ -140,8 +140,9 @@ const server = app.listen(port, () => {
 })
 
 app.post('/app/login', (req, res) => {
-    const { username, password } = req.body;
-            const login = logdb.run(username, password);
+    const { username, password, time } = req.body;
+            const insert = accesslogdb.prepare('INSERT INTO accesslog (username, password, time) VALUES (?, ?, ?)');
+            const run = insert.run(username, password, time);
             res.status(200);
             res.json({
                 message : "user loggedin successfully"
@@ -149,8 +150,9 @@ app.post('/app/login', (req, res) => {
 })
 
 app.post('/app/signup', (req, res) => {
-    const { username, password } = req.body;
-            const signup = newuserdb.run(username, password);
+    const { username, password, time } = req.body;
+            const insert = userdb.prepare('INSERT INTO userlist (username, password, time) VALUES (?, ?, ?)');
+            const run = insert.run(username, password, time);
             res.status(200);
             res.json({
                 message : "user signed up successfully"
@@ -229,3 +231,4 @@ app.get('/app/mental/task3', (req, res) => {
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
 })
+

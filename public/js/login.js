@@ -12,7 +12,7 @@ async function loginuser(username, password){
     
     if (response.ok){
         console.log(json.message)
-        window.location = "/public/index.html"
+        window.location = "/"
     }
     else{
         console.log(json.message);

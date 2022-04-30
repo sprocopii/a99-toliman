@@ -17,7 +17,7 @@ if (row === undefined) {
 // const sql commands
 //email address, password, number  of times accessed
     const sqlInit = `
-        CREATE TABLE accesslog ( id INTEGER PRIMARY KEY, username TEXT, time TEXT);
+        CREATE TABLE accesslog ( id INTEGER PRIMARY KEY, username TEXT, password TEXT, time TEXT);
     `;
 //executes
     accesslogdb.exec(sqlInit);

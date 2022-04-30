@@ -17,7 +17,7 @@ if (row === undefined) {
 // const sql commands
 //email address, password, number  of times accessed
     const sqlInit = `
-        CREATE TABLE userlist ( id INTEGER PRIMARY KEY, username TEXT, password TEXT);
+        CREATE TABLE userlist ( id INTEGER PRIMARY KEY, username TEXT, password TEXT, time TEXT);
     `;
 //executes
     userdb.exec(sqlInit);
