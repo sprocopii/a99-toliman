@@ -4,15 +4,14 @@ The Wellness Tasks Calendar aims to provide six simple tasks to incorporate into
 
 This app is the collaborative work of Team Toliman consisting of Wid Alsadoon, Kai White, Stephan Procopii, Angust Ingram, and Madison McFadden. Team Toliman has the following roles:
 
-Backend: Wid Alsadoon & Kai White
-Frontend & Design: Stephan Procopii & Madison McFadden
-Database: Angus Ingram
-
-Review Managers: Stephan Procopii & Wid Alsadoon
-Plan Managers: Wid Alsadoon & Angus Ingram
-Documentation Managers: Kai White & Wid Alsadoon
-Release Manager: Stephan Procopii
-Project Manager: Madison McFadden
+* Backend: Wid Alsadoon & Kai White
+* Frontend & Design: Stephan Procopii & Madison McFadden
+* Database: Angus Ingram
+* Review Managers: Stephan Procopii & Wid Alsadoon
+* Plan Managers: Wid Alsadoon & Angus Ingram
+* Documentation Managers: Kai White & Wid Alsadoon
+* Release Manager: Stephan Procopii
+* Project Manager: Madison McFadden
 
 # Mapping the Team Process:
 -The Wellness Tasks Calendar builds on a series of functions created in the server.js file of the directory. These functions are created to appropriately randomize physical and mental tasks for a period of time.
