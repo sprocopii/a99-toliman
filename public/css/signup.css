@@ -49,15 +49,4 @@ body{
     cursor: pointer;
     background: #7BAFD4;
     color: white;
-
-}
-
-.go_back a{
-    font-size: 11px;
-    line-height: 30px;
-    color: lightgray;
-}
-
-.go_back a:hover{
-    color: #7BAFD4;
 }
