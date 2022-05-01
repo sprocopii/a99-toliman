@@ -192,40 +192,40 @@ app.get('/app/physical', (req, res, next) => {
 
 app.get('/app/physical/task1', (req, res, next) => {
     var tasks = physicalDescription_Randomizer()
-    res.status(200).json(tasks.at(0))
+    res.status(200).json({tasks})
   })
 
 app.get('/app/physical/task2', (req, res, nextt) => {
     var tasks = physicalDescription_Randomizer()
-    res.status(200).json(tasks.at(1))
+    res.status(200).json({tasks})
 })
 
 app.get('/app/physical/task3', (req, res, next) => {
     var tasks = physicalDescription_Randomizer()
-    res.status(200).json(tasks.at(2))
+    res.status(200).json({tasks})
 })
 
 app.get('/app/mental', (req, res, next) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
     
     var tasks = randomiz_mental()
-    res.status(200).json(tasks)
+    res.status(200).json({tasks})
   })
 
 
 app.get('/app/mental/task1', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
-    res.status(200).json(tasks.at(0))
+    res.status(200).json({tasks})
   })
 
 app.get('/app/mental/task2', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
-    res.status(200).json(tasks.at(1))
+    res.status(200).json({tasks})
 })
 
 app.get('/app/mental/task3', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
-    res.status(200).json(tasks.at(2))
+    res.status(200).json({tasks})
 })
 
 app.use(function(req, res) {

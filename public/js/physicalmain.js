@@ -1,6 +1,3 @@
-// js file for html and css content
-
-// PHYSICAL HEALTH SCRIPTS //
 // get physical task start //
 const physicaltask=document.getElementById("physicaltask")
 
@@ -13,12 +10,12 @@ async function getPhysTasks(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/physical'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
@@ -39,17 +36,17 @@ async function getTask1Des(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task1'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("pdes1").innerHTML = response.tasks;
+                        document.getElementById("pdes1").innerHTML = response.tasks.at(0);
             
                     });
 } 
@@ -66,17 +63,17 @@ async function getTask2Des(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task2'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("pdes2").innerHTML = response.tasks;
+                        document.getElementById("pdes2").innerHTML = response.tasks.at(1);
             
                     });
 } 
@@ -94,17 +91,17 @@ async function getTask3Des(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task3'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("pdes3").innerHTML = response.tasks;
+                        document.getElementById("pdes3").innerHTML = response.tasks.at(2);
             
                     });
 } 
