@@ -23,39 +23,16 @@ body{
     color: white;
 }
 
-.signup_box {
-    background-color: rgba(0,0,0,.5);
-    color: white;
-    left: 50%;
-    top: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    border-style: none;
-    padding: 40px;
-}
-
-.signup_box input {
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.signup_box input[type="username"], input[type="password"] {
+.header{
     font-family: Monaco;
-    border: none;
-    border-bottom: 1px solid white;
-    background: transparent;
-    outline: none;
-    height: 35px;
-    color: white;
+    text-align: center;
 }
 
-.signup_box button {
+.tasks button{
     font-family: Monaco;
+    position: center;
     height: 35px;
-    width: 100%;
+    width: 24%;
     margin-bottom: 10px;
     background: white;
     border-style: none;
@@ -63,8 +40,8 @@ body{
     font-size: 15px;
 }
 
-.register button:hover {
+.tasks button:hover{
     cursor: pointer;
-    background: #7BAFD4;
+    background: black;
     color: white;
 }
