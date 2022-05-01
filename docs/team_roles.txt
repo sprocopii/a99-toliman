@@ -1,6 +1,6 @@
-Review Manager: Wid Alsadoon
+Review Manager: Wid Alsadoon & Stephan Procopii
 Plan Manager: Wid Alsadoon & Angus Ingram
-Documentation Manager: Kai White
+Documentation Manager: Kai White & Wid Alsadoon
 Release Manager: Stephan Procopii
 Project Manager: Madison McFadden
 
