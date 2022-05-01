@@ -10,18 +10,17 @@ async function getMentTasks(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/mental'
-    const base = 'http://localhost:3000/mentaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("mentalres").innerHTML = result.tasks;
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("mentalres").innerHTML = response.tasks;
             
                     });
 } 
@@ -33,21 +32,21 @@ window.addEventListener('load',function(){
     mtask1.addEventListener("click", getTask1MentDes)
 });// function to wait for response
 
-async function getTask1MentDes() {
+async function getTask1MentDes(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/mental/task1'
-    const base = 'http://localhost:3000/mentaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("mdes1").innerHTML = result.tasks.at(0);
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("mdes1").innerHTML = response.tasks;
             
                     });
 } 
@@ -60,21 +59,21 @@ window.addEventListener('load',function(){
     mtask2.addEventListener("click", getTask2MentDes)
 });// function to wait for response
 
-async function getTask2MentDes() {
+async function getTask2MentDes(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/mental/task2'
-    const base = 'http://localhost:3000/mentaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("mdes2").innerHTML = result.tasks.at(1);
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("mdes2").innerHTML = response.tasks;
             
                     });
 } 
@@ -88,21 +87,21 @@ window.addEventListener('load',function(){
     mtask3.addEventListener("click", getTask3MentDes)
 });// function to wait for response
 
-async function getTask3MentDes() {
+async function getTask3MentDes(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/mental/task3'
-    const base = 'http://localhost:3000/mentaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
-                    
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("mdes3").innerHTML = result.tasks.at(2);
+                     
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("mdes3").innerHTML = response.tasks;
             
                     });
 } 

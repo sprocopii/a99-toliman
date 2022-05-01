@@ -35,21 +35,21 @@ window.addEventListener('load',function(){
     ptask1.addEventListener("click", getTask1Des)
 });// function to wait for response
 
-async function getTask1Des() {
+async function getTask1Des(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task1'
-    const base = 'http://localhost:3000/physicaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("pdes1").innerHTML = result.tasks.at(0);
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("pdes1").innerHTML = response.tasks;
             
                     });
 } 
@@ -62,21 +62,21 @@ window.addEventListener('load',function(){
     ptask2.addEventListener("click", getTask2Des)
 });// function to wait for response
 
-async function getTask2Des() {
+async function getTask2Des(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task2'
-    const base = 'http://localhost:3000/physicaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("pdes2").innerHTML = result.tasks.at(1);
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("pdes2").innerHTML = response.tasks;
             
                     });
 } 
@@ -90,21 +90,21 @@ window.addEventListener('load',function(){
     ptask3.addEventListener("click", getTask3Des)
 });// function to wait for response
 
-async function getTask3Des() {
+async function getTask3Des(event) {
+    event.preventDefault()
     // endpoint
     const endpoint='/app/physical/task3'
-    const base = 'http://localhost:3000/physicaltasks.html'
-    const url=document.base+endpoint
+    const url=document.baseURI+endpoint
     // waiting for response
     await fetch(url, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.json();
+                        return response.text();
                     })
                     
-                    .then(function(result) {
-                        console.log(result);
-                        document.getElementById("pdes3").innerHTML = result.tasks.at(2);
+                    .then(function(response) {
+                        console.log(response);
+                        document.getElementById("pdes3").innerHTML = response.tasks;
             
                     });
 } 
