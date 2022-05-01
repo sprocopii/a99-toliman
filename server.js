@@ -2,6 +2,8 @@ const express = require('express')
 const args = require("minimist")(process.argv.slice(2))
 args["port"]
 const app = express()
+var accesslogdb = require('./src/accesslogdb.js')
+var userdb = require('./src/userdb.js')
 const path = require('path')
 
 // Serve static HTML files
@@ -17,6 +19,34 @@ const cors = require('cors')
 app.use(cors())
 
 var port =  args.port || process.env.PORT || 5000
+
+//creates log/sign up inserts
+
+const logdb = ((req, res, next) => {
+    let logdata = {
+        username: req.username,
+        password: req.password,
+        time: Date.now(),
+
+    }
+    const stmt = accesslogdb.prepare('INSERT INTO accesslog (username, password, time) VALUES (?, ?, ?)')
+    const info = stmt.run(logdata.username, logdata.password, logdata.time)
+    next()
+});
+
+const newuserdb = ((req, res, next) => {
+    let userdata = {
+        username: req.username,
+        password: req.pasword,
+        time: Date.now(),
+
+    }
+    const stmt = userdb.prepare('INSERT INTO userlist (username, password, time) VALUES (?, ?, ?)')
+    const info = stmt.run(userdata.username, userdata.password, userdata.time)
+    next()
+});
+
+
 
 var physical_tasks = ["Walk 6k steps", "30 minutes of aerobics", "20 minutes of Yoga", "Go on a quick jog", "10 minutes of stretching", "15 minutes of biking"]
 var physical_descriptions = ["Walking 6k steps a day is necessary to ensure the health of your joints and muscles!",
@@ -109,6 +139,26 @@ const server = app.listen(port, () => {
     console.log('App is running on port %port%.'.replace('%port%',port))
 })
 
+app.post('/app/login', (req, res) => {
+    const { username, password, time } = req.body;
+            const insert = accesslogdb.prepare('INSERT INTO accesslog (username, password, time) VALUES (?, ?, ?)');
+            const run = insert.run(username, password, time);
+            res.status(200);
+            res.json({
+                message : "user loggedin successfully"
+            });
+})
+
+app.post('/app/signup', (req, res) => {
+    const { username, password, time } = req.body;
+            const insert = userdb.prepare('INSERT INTO userlist (username, password, time) VALUES (?, ?, ?)');
+            const run = insert.run(username, password, time);
+            res.status(200);
+            res.json({
+                message : "user signed up successfully"
+            });
+})
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
 })
@@ -181,3 +231,4 @@ app.get('/app/mental/task3', (req, res) => {
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
 })
+
