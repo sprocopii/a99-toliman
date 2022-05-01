@@ -18,7 +18,7 @@ const cors = require('cors')
 // Set up cors middleware on all endpoints
 app.use(cors())
 
-var port =  args.port || process.env.PORT || 5000
+var port =  args.port || process.env.PORT || 3000
 
 //creates log/sign up inserts
 
@@ -178,34 +178,67 @@ app.get('/mentaltasks', (req, res) => {
 app.get('/physicaltasks', (req, res) => {
     res.sendFile(__dirname + '/public/physicaltasks.html')
 })
+// test
+app.get('/mentaltasks/app/mental', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental')
+})
+
+app.get('/mentaltasks/app/mental/task1', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task1')
+})
+
+app.get('/mentaltasks/app/mental/task2', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task2')
+})
+
+app.get('/mentaltasks/app/mental/task3', (req, res) => {
+    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task3')
+})
+
+app.get('/physicaltasks/app/physical', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical')
+})
+
+app.get('/physicaltasks/app/physical/task1', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task1')
+})
+
+app.get('/physicaltasks/app/physical/task2', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task2')
+})
+
+app.get('/physicaltasks/app/physical/task3', (req, res) => {
+    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task3')
+})
+//end test
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
 })
 
-app.get('/app/physical', (req, res) => {
+app.get('/app/physical', (req, res, next) => {
   var msg = 'Physical wellbeing is vital to the longevity and comfort of the body. These are you physical tasks for the day: '
   
   var tasks = date_Randomizer()
   res.status(200).json({tasks})
 })
 
-app.get('/app/physical/task1', (req, res) => {
+app.get('/app/physical/task1', (req, res, next) => {
     var tasks = physicalDescription_Randomizer()
     res.status(200).json(tasks.at(0))
   })
 
-app.get('/app/physical/task2', (req, res) => {
+app.get('/app/physical/task2', (req, res, nextt) => {
     var tasks = physicalDescription_Randomizer()
     res.status(200).json(tasks.at(1))
 })
 
-app.get('/app/physical/task3', (req, res) => {
+app.get('/app/physical/task3', (req, res, next) => {
     var tasks = physicalDescription_Randomizer()
     res.status(200).json(tasks.at(2))
 })
 
-app.get('/app/mental', (req, res) => {
+app.get('/app/mental', (req, res, next) => {
     var msg = 'Mental wellbeing is vital to the longevity and comfort of the body. These are you mental tasks for the day: '
     
     var tasks = randomiz_mental()
@@ -213,17 +246,17 @@ app.get('/app/mental', (req, res) => {
   })
 
 
-app.get('/app/mental/task1', (req, res) => {
+app.get('/app/mental/task1', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
     res.status(200).json(tasks.at(0))
   })
 
-app.get('/app/mental/task2', (req, res) => {
+app.get('/app/mental/task2', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
     res.status(200).json(tasks.at(1))
 })
 
-app.get('/app/mental/task3', (req, res) => {
+app.get('/app/mental/task3', (req, res, next) => {
     var tasks = mentalDescription_Randomizer()
     res.status(200).json(tasks.at(2))
 })
@@ -231,4 +264,3 @@ app.get('/app/mental/task3', (req, res) => {
 app.use(function(req, res) {
     res.status(404).send("Endpoint does not exist")
 })
-
