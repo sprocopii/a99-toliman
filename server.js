@@ -175,42 +175,9 @@ app.get('/mentaltasks', (req, res) => {
     res.sendFile(__dirname + '/public/mentaltasks.html')
 })
 
-app.get('/physicaltasks', (req, res) => {
+app.get('/physicaltasks', (req, res,) => {
     res.sendFile(__dirname + '/public/physicaltasks.html')
 })
-// test
-app.get('/mentaltasks/app/mental', (req, res) => {
-    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental')
-})
-
-app.get('/mentaltasks/app/mental/task1', (req, res) => {
-    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task1')
-})
-
-app.get('/mentaltasks/app/mental/task2', (req, res) => {
-    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task2')
-})
-
-app.get('/mentaltasks/app/mental/task3', (req, res) => {
-    res.sendFile(__dirname + '/public/mentaltasks.html/app/mental/task3')
-})
-
-app.get('/physicaltasks/app/physical', (req, res) => {
-    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical')
-})
-
-app.get('/physicaltasks/app/physical/task1', (req, res) => {
-    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task1')
-})
-
-app.get('/physicaltasks/app/physical/task2', (req, res) => {
-    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task2')
-})
-
-app.get('/physicaltasks/app/physical/task3', (req, res) => {
-    res.sendFile(__dirname + '/public/physicaltasks.html/app/physical/task3')
-})
-//end test
 
 app.get('/app',(req, res) => {
     res.status(200).end("Welcome! Let's complete some tasks!\nGo to physical for your physical tasks\nGo to mental for your mental tasks")
