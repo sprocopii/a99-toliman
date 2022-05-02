@@ -14,3 +14,5 @@ physicaltasks.html and mentaltasks.html:
     - Clicking on "Tasks for today" button will print out 3 physical / mental tasks given to you for that day, changes based on the day
     - When clicking each "Task" button, it will give you a description of that tasks
 
+How to document Endpoints:
+https://idratherbewriting.com/learnapidoc/docendpoints.html 
