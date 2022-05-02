@@ -16,3 +16,17 @@ physicaltasks.html and mentaltasks.html:
 
 How to document Endpoints:
 https://idratherbewriting.com/learnapidoc/docendpoints.html 
+
+App Functions:
+-Provides 3 tasks for physical health
+-Provides 3 tasks for mental health
+-Must randomize tasks every 15 days
+-Provide login/user account signup
+-Homepage
+-At root endpoint /app/
+
+Functions for server file:
+-Randomize the tasks
+-Output apps at each endpoint
+
+Logging: https://www.loggly.com/use-cases/express-js-and-morgan-logging/
