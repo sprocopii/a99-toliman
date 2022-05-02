@@ -62,8 +62,13 @@ window.addEventListener('load',function(){
 async function getTask2MentDes(event) {
     event.preventDefault()
     // endpoint
+<<<<<<< HEAD
+    const endpoint='app/mental/task2'
+    const url=document.baseURI+endpoint
+=======
     const endpoint='/app/mental/task2'
     //const url=document.baseURI+endpoint
+>>>>>>> de67e0e9631de319af7c243c634587b85ac710d9
     // waiting for response
     await fetch(endpoint, {mode: 'cors'})
     // receiving response
