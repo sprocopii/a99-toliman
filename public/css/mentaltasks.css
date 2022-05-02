@@ -23,12 +23,26 @@ body{
     color: white;
 }
 
-.header{
+.first_container{
     font-family: Monaco;
+    width: 800px;
+    height: 130px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    left: 50%;
+    top: 28%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: none;
+    padding: 20px;
     text-align: center;
+    font-size: 10px;
 }
 
-.tasks button{
+.first_container button{
     font-family: Monaco;
     position: center;
     height: 35px;
@@ -40,7 +54,63 @@ body{
     font-size: 15px;
 }
 
-.tasks button:hover{
+.first_container button:hover{
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
+.second_container{
+    font-family: Monaco;
+    width: 800px;
+    height: 100px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    left: 50%;
+    top: 45%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.third_container{
+    font-family: Monaco;
+    width: 800px;
+    height: 200px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    left: 50%;
+    top: 67%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.third_container button{
+    font-family: Monaco;
+    position: center;
+    height: 35px;
+    width: 24%;
+    margin-bottom: 10px;
+    background: white;
+    border-style: none;
+    color: black;
+    font-size: 15px;
+}
+
+.third_container button:hover{
     cursor: pointer;
     background: black;
     color: white;
