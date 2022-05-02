@@ -1,4 +1,4 @@
-// get physical task start //
+// get mental task start //
 const mentaltask=document.getElementById("mentaltask")
 
 // event listener for click
@@ -10,12 +10,12 @@ async function getMentTasks(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/mental'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
@@ -36,17 +36,17 @@ async function getTask1MentDes(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/mental/task1'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("mdes1").innerHTML = response.tasks;
+                        document.getElementById("mdes1").innerHTML = response.tasks.at(0);
             
                     });
 } 
@@ -62,18 +62,23 @@ window.addEventListener('load',function(){
 async function getTask2MentDes(event) {
     event.preventDefault()
     // endpoint
+<<<<<<< HEAD
     const endpoint='app/mental/task2'
     const url=document.baseURI+endpoint
+=======
+    const endpoint='/app/mental/task2'
+    //const url=document.baseURI+endpoint
+>>>>>>> de67e0e9631de319af7c243c634587b85ac710d9
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                     
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("mdes2").innerHTML = response.tasks;
+                        document.getElementById("mdes2").innerHTML = response.tasks.at(1);
             
                     });
 } 
@@ -91,17 +96,17 @@ async function getTask3MentDes(event) {
     event.preventDefault()
     // endpoint
     const endpoint='/app/mental/task3'
-    const url=document.baseURI+endpoint
+    //const url=document.baseURI+endpoint
     // waiting for response
-    await fetch(url, {mode: 'cors'})
+    await fetch(endpoint, {mode: 'cors'})
     // receiving response
                     .then(function(response) {
-                        return response.text();
+                        return response.json();
                     })
                      
                     .then(function(response) {
                         console.log(response);
-                        document.getElementById("mdes3").innerHTML = response.tasks;
+                        document.getElementById("mdes3").innerHTML = response.tasks.at(2);
             
                     });
 } 

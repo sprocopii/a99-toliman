@@ -6,31 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Daily Mental Health Tasks</title>
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/mentaltasks.css">
     </head>
     <body>
-        <nav>
-            <a href="/index.html"><button id="homenav">Home</button></a>
-            <a href="/login.html"><button id="loginnav">Log In</button></a>
-            <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
-            <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
-        </nav>
-
-        <!-- physical health page -->
-        
-            <h1>Click the button for your mental health tasks for today!</h1>
-            <button id="mentaltask">Tasks for today!</button>
-            <!-- daily tasks and description  -->
-            <h2>Your tasks:</h2>
-            <p><span id="mentalres"></span></p>
-            <!--get descriptions-->
-            <h3>Click one of the buttons below to get a description of one of your tasks!</h3>
-            <button id="mtask1">Task 1</button>
-            <button id="mtask2">Task 2</button>
-            <button id="mtask3">Task 3</button>
-            <p>Task 1 description:<span id="mdes1"></span></p>
-            <p>Task 2 description:<span id="mdes2"></span></p>
-            <p>Task 3 description:<span id="mdes3"></span></p>
+        <div class = "nav_buttons">
+            <nav>
+                <a href="/index.html"><button id="homenav">Home</button></a>
+                <a href="/login.html"><button id="loginnav">Log In</button></a>
+                <a href="/mentaltasks.html"><button id="mentalnav">Mental Health</button></a>
+                <a href="/physicaltasks.html"><button id="physicalnav">Physical Health</button></a>
+            </nav>
+        </div>
+        <div class = "first_container">
+            <!-- physical health page -->
+            <h1>Click the button for your mental health tasks for today</h1>  
+            <button id="mentaltask">Tasks for today</button>
+        </div> 
+            <div class = "second_container">
+                <!-- daily tasks and description  -->
+                <h2>Your tasks:</h2>
+                <p><span id="mentalres"></span></p>
+            </div>
+            <div class = "third_container">
+                <!--get descriptions-->
+                <h3>Click one of the buttons below to get a description of your task</h3>
+                <button id="mtask1">Task 1</button>
+                <button id="mtask2">Task 2</button>
+                <button id="mtask3">Task 3</button>
+                <p><span id="mdes1"></span></p>
+                <p><span id="mdes2"></span></p>
+                <p><span id="mdes3"></span></p>
+            </div>
         <!-- link to js file -->
         <script src="/js/mentalmain.js"></script>
     </body>

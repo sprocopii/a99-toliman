@@ -8,4 +8,9 @@ login.html:
 
 signup.html:
     - When signing up for new account, asks for username and password
-    - 
+    - Clicking register will log the information into the database
+
+physicaltasks.html and mentaltasks.html:
+    - Clicking on "Tasks for today" button will print out 3 physical / mental tasks given to you for that day, changes based on the day
+    - When clicking each "Task" button, it will give you a description of that tasks
+

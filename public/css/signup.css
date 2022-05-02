@@ -5,6 +5,24 @@ body{
     background-position: center;
 }
 
+.nav_buttons button{
+    font-family: Monaco;
+    position: center;
+    height: 35px;
+    width: 24%;
+    margin-bottom: 10px;
+    background: white;
+    border-style: none;
+    color: black;
+    font-size: 15px;
+    
+}
+.nav_buttons button:hover {
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
 .signup_box {
     background-color: rgba(0,0,0,.5);
     color: white;
@@ -27,7 +45,7 @@ body{
 .signup_box input[type="username"], input[type="password"] {
     font-family: Monaco;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
     background: transparent;
     outline: none;
     height: 35px;
